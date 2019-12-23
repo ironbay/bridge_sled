@@ -1,0 +1,15 @@
+[package]
+name = "bridge_sled"
+version = "0.1.0"
+authors = []
+edition = "2018"
+
+[lib]
+name = "bridge_sled"
+path = "src/lib.rs"
+crate-type = ["dylib"]
+
+[dependencies]
+rustler = "0.21.0"
+lazy_static = "1.0"
+sled = "0.30.1"
