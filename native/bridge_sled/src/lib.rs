@@ -52,6 +52,7 @@ fn db_open<'a>(env: Env<'a>, args: &[Term<'a>]) -> Result<Term<'a>, Error> {
         .cache_capacity(10_000_000_000)
         .flush_every_ms(Some(1000))
         .snapshot_after_ops(100_000)
+        .use_compression(true)
         .open()
         .unwrap();
     Ok((atoms::ok(), ResourceArc::new(Wrapped::new(db))).encode(env))
